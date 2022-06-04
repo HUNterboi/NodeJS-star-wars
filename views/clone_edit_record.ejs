@@ -1,0 +1,24 @@
+<%- include('header', {pagetitle: 'Clone edit'}) -%>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Egy klón szerkesztése</h2>
+            <form method="post">
+                <div class="form-group col-3">
+                    <label for="name">Név</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                    value="<%= (typeof clone_record === 'undefined') ? '' : clone_record.name %>"/>
+                </div>
+                <div class="form-group col-3">
+                    <label for="legion">Légió</label>
+                    <input type="text" class="form-control" id="legion" name="legion" 
+                    value="<%= (typeof clone_record === 'undefined') ? '' : clone_record.legion %>"/>
+                </div>
+                <input class="btn" type="image" src="/images/accept_icon.png" />
+                <!-- <a class="btn" href="/clone/edit"> <img src="/images/accept_icon.png"> </a> -->
+                <a class="btn" href="/clone/edit"> <img src="/images/delete_icon.png"> </a>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('footer') -%>

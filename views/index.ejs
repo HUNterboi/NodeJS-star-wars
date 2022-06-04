@@ -1,0 +1,51 @@
+<%- include('header', {pagetitle: 'Jedi view'}) -%>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<a href="/jedi/edit" class="button">
+				<img src="/images/edit_icon.png" style="padding: 5px">
+			</a>
+		</div>
+		<div class="col-10">
+			<h1 style="text-align: center;">Jedik</h1>
+		</div>
+		<div class="col">
+			<a href="/clone" class="button">
+				<img src="/images/clone_icon.png" style="padding: 5px">
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped table-bordered">
+				<tr>
+					<th>Név</th>
+					<th>Rang</th>
+					<th>Midi-chlorian szám</th>
+					<th>Alátartozó légió vezetője</th>
+				</tr>
+				<% for (key in jedi) { var one_jedi = jedi[key]; %>
+					<tr>
+						<td> <%= one_jedi.name %>  </td>
+						<td> <%= one_jedi.rang %>  </td>
+						<td> <%= one_jedi.midi %>  </td>
+						<td> <%= one_jedi.clone %>  </td>
+					</tr>
+				<% } %> 
+				<!-- <tr>
+					<td>Obi-Wan Kenobi</td>
+					<td>Mester</td>
+					<td>13000</td>
+					<td>CC-2224 "Cody"</td>
+				</tr>
+				<tr>
+					<td>Anakin Skywalker</td>
+					<td>Lovag</td>
+					<td>30000</td>
+					<td>CT-7567 "Rex"</td>
+				</tr> -->
+			</table>
+		</div>	
+	</div>
+</div>
+<%- include('footer') -%>

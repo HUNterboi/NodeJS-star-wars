@@ -1,0 +1,42 @@
+<%- include('header', {pagetitle: 'Clone edit'}) -%>
+<form>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<a href="/clone" class="button">
+					<img src="/images/accept_icon.png" style="padding: 5px">
+				</a>
+			</div>
+			<div class="col-10">
+				<h1 style="text-align: center;">Klónok szerkesztése</h1>
+			</div>
+			<div class="col">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<table class="table table-striped table-bordered">
+				<tr>
+					<th>Név</th>
+					<th>légió</th>
+				</tr>
+
+				<% for (key in clones) { var clone = clones[key]; %>
+					<tr>
+						<td> <%= clone.name %>  </td>
+						<td> <%= clone.legion %>  </td>
+						<td> 
+							<a href="/clone/edit/<%= clone._id %> "><img src="/images/edit_icon_small.png"></a>
+							<a href="/clone/del/<%= clone._id %> "><img src="/images/delete_icon.png"></a> 
+						</td>
+					</tr>
+				<% } %> 
+				<tr>
+					<td colspan="4" style="text-align: center"><a href="/clone/new"><img src="/images/add_icon.png"></a></td>
+				</tr>
+			</table>
+			</div>	
+		</div>
+	</div>
+</form>
+<%- include('footer') -%>

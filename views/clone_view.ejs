@@ -1,0 +1,45 @@
+<%- include('header', {pagetitle: 'Clone view'}) -%>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<a href="/clone/edit" class="button">
+				<img src="/images/edit_icon.png" style="padding: 5px">
+			</a>
+		</div>
+		<div class="col-10">
+			<h1 style="text-align: center;">Klón parancsnokok</h1>
+		</div>
+		<div class="col">
+			<a href="/" class="button">
+				<img src="/images/jedi_icon.png" style="padding: 5px">
+			</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<table class="table table-striped table-bordered">
+				<tr>
+					<th>Név</th>
+					<th>légió</th>
+				</tr>
+
+				<% for (key in clones) { var clone = clones[key]; %>
+					<tr>
+						<td> <%= clone.name %>  </td>
+						<td> <%= clone.legion %>  </td>
+					</tr>
+				<% } %> 
+
+				<!-- <tr>
+					<td>CC-2224 "Cody"</td>
+					<td>212-es légió</td>
+				</tr>
+				<tr>
+					<td>CT-7567 "Rex"</td>
+					<td>501-es légió</td>
+				</tr> -->
+			</table>
+		</div>	
+	</div>
+</div>
+<%- include('footer') -%>

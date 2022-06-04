@@ -1,0 +1,33 @@
+<%- include('header', {pagetitle: 'Clone edit'}) -%>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Egy jedi szerkesztése</h2>
+            <form method="post">
+                <div class="form-group col-3">
+                    <label for="name">Név</label>
+                    <input type="text" class="form-control" id="name" name="name" 
+                    value="<%= (typeof jedi_record === 'undefined') ? '' : jedi_record.name %>">
+                </div>
+                <div class="form-group col-3">
+                    <label for="rang">Rang</label>
+                    <input type="text" class="form-control" id="rang" name="rang" 
+                    value="<%= (typeof jedi_record === 'undefined') ? '' : jedi_record.rang %>">
+                </div>
+                <div class="form-group col-3">
+                    <label for="midi">Midi-chlorian szám</label>
+                    <input type="text" class="form-control" id="midi" name="midi" 
+                    value="<%= (typeof jedi_record === 'undefined') ? '' : jedi_record.midi %>">
+                </div>
+                <div class="form-group col-3">
+                    <label for="clone">Alátartozó légió vezetője</label>
+                    <input type="text" class="form-control" id="clone" name="clone" 
+                    value="<%= (typeof jedi_record === 'undefined') ? '' : jedi_record.clone %>">
+                </div>
+                <input class="btn" type="image" src="/images/accept_icon.png" />
+                <a class="btn" href="/jedi/edit"> <img src="/images/delete_icon.png"> </a>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('footer') -%>
